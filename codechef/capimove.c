@@ -5,7 +5,6 @@ int max2(int a, int b){
     else return b;
 }
 int findmax(long long int *array, int*non, int n, int count){
-    
     int i = 0;
     long long int* array2;
     array2 = (long long int*)malloc(n*sizeof(long long int));
@@ -18,7 +17,7 @@ int findmax(long long int *array, int*non, int n, int count){
             }
         }
     }
-    int max= array2[0];
+    int max= 0;
     // printf("%dmax \n", max);
     i=0;
     while(i<(n-1)){
@@ -26,6 +25,9 @@ int findmax(long long int *array, int*non, int n, int count){
             max = i+1;
         }
         i++;
+    }
+    if((max == 0)&&(array2[0]==0)){
+        return -1;
     }
     return max;
 }                              
